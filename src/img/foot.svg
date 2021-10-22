@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="61px" height="99px" viewBox="0 0 61 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(1.000000, 0.000000)" stroke="#000000" stroke-width="2">
+            <path d="M16.8487167,55.4142532 C18.0131607,45.0199966 11.2654419,36.0000668 14.4063873,27.7712135 C17.5473328,19.5423603 29.2192078,20.6459141 34.1268616,22.4385662 C39.0345154,24.2312183 52.7579956,33.1401138 49.8720703,41.8059235 C46.986145,50.4717331 41.5562363,53.9309616 37.2004623,63.8387489 C32.8446884,73.7465363 29.040184,86.0254745 20.6763535,93.7723389 C12.3125229,101.519203 2.88394165,95.3952255 1.11312103,89.6342316 C-0.657699585,83.8732376 -0.439468384,77.003521 5.85041046,70.4211349 C12.1402893,63.8387489 15.6842728,65.8085098 16.8487167,55.4142532 Z" id="Path-2"></path>
+            <ellipse id="Oval" transform="translate(22.000000, 9.500000) rotate(5.000000) translate(-22.000000, -9.500000) " cx="22" cy="9.5" rx="6" ry="7.5"></ellipse>
+            <ellipse id="Oval-Copy" transform="translate(34.500000, 13.000000) rotate(12.000000) translate(-34.500000, -13.000000) " cx="34.5" cy="13" rx="3.5" ry="5"></ellipse>
+            <ellipse id="Oval-Copy-2" transform="translate(42.000000, 18.000000) rotate(18.000000) translate(-42.000000, -18.000000) " cx="42" cy="18" rx="3" ry="4"></ellipse>
+            <ellipse id="Oval-Copy-3" transform="translate(49.000000, 23.000000) rotate(20.000000) translate(-49.000000, -23.000000) " cx="49" cy="23" rx="3" ry="4"></ellipse>
+            <ellipse id="Oval-Copy-4" transform="translate(54.500000, 31.500000) rotate(25.000000) translate(-54.500000, -31.500000) " cx="54.5" cy="31.5" rx="2.5" ry="3.5"></ellipse>
+        </g>
+    </g>
+</svg>

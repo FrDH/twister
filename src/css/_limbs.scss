@@ -1,0 +1,56 @@
+.limb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transition: background-color 2s ease;
+
+  &--left {
+    left: 0%;
+    padding-left: 10vw;
+  }
+
+  &--right {
+    right: 0%;
+    padding-right: 10vw;
+  }
+
+  &--hand {
+    top: 0%;
+    padding-top: 10vw;
+  }
+
+  &--foot {
+    bottom: 0%;
+    padding-bottom: 10vw;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    background: no-repeat center center / contain;
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(311deg)
+      brightness(107%) contrast(101%);
+    aspect-ratio: 1;
+  }
+
+  &--hand:before {
+    width: 50%;
+    height: 50%;
+    background-image: url("./img/hand.svg");
+  }
+
+  &--foot:before {
+    width: 60%;
+    height: 60%;
+    background-image: url("./img/foot.svg");
+  }
+}
+
+.limb--left.limb--foot:before,
+.limb--right.limb--hand:before {
+  transform: rotateY(180deg);
+}

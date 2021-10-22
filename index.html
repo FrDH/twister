@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- 
+		<link rel="shortcut icon" type="images/ico" href="favicon.ico" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+-->
+    <title>Twister</title>
+  </head>
+  <body>
+
+    <div class="game">
+      <div class="limb limb--left limb--hand"></div>
+      <div class="limb limb--right limb--hand"></div>
+      <div class="limb limb--left limb--foot"></div>
+      <div class="limb limb--right limb--foot"></div>
+
+      <button class="control control--play"
+        title="Play / pause the game"
+      >
+          <div class='control__loading'>
+              <div><span></span></div>
+              <div><span></span></div>
+          </div>
+      </button>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

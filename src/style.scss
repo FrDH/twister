@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: menu, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@import "./css/game";
+@import "./css/limbs";
+@import "./css/control";
+@import "./css/colors";
