@@ -39,6 +39,14 @@
   }
 }
 
+.control__start {
+  display: none;
+
+  .control--start & {
+    display: block;
+  }
+}
+
 .control__loading {
   display: none;
 

@@ -17,7 +17,7 @@ export default (fn: Function) => {
             interval = setInterval(fn, config.duration);
 
         //  Pause
-        } else {
+        } else if (control.classList.contains('control--pause')) {
             clearInterval(interval);
             document.querySelectorAll('.limb').forEach(limb => {
                 limb.classList.remove(...config.colors);

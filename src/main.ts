@@ -3,6 +3,7 @@ import './style.scss'
 import config from './js/config';
 import controls from './js/controls';
 import audio from './js/audio';
+import start from './js/start';
 
 /** Get random entry from array */
 const random = (arr: string[]) => {
@@ -14,6 +15,8 @@ let currentLimb: string = '';
 
 /** Last set color. */
 let currentColor: string = '';
+
+start();
 
 controls(() => {
     let newLimb = '',
