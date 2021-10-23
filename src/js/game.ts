@@ -66,12 +66,14 @@ export const pause = () => {
     gameElem?.classList.add('is-paused');
 };
 
+/** Do the next step. */
 export const next = () => {
     let newLimb = '',
         side = '',
         limb = '',
         color = '';
     
+    // Choose a new limb + color combo.
     do {
         side = helpers.random(config.sides);
         limb = helpers.random(config.limbs);
@@ -79,10 +81,11 @@ export const next = () => {
         newLimb = `${side}${limb}`;
     
     } while (
-        document.querySelector(`.limb--${side}.limb--${limb}`)?.classList.contains(color) || // don't set the limb to its current color
-        document.querySelectorAll(`.${color}`).length > 1 || // don't use a color more than twice
-        newLimb === currentLimb ||  // don't set the same limb twice in a row
-        color === currentColor // don't set the same color twice in a row
+        false
+        || newLimb === currentLimb // Don't set the same limb twice in a row.
+        || color === currentColor // Don't set the same color twice in a row.
+        || document.querySelectorAll(`.${color}`).length > 1 // Don't use a color more than twice.
+        || document.querySelector(`.limb--${side}.limb--${limb}`)?.classList.contains(color) // Don't set the limb to its current color.
     )
 
     currentLimb = newLimb;

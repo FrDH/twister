@@ -25,14 +25,16 @@ export const sounds: looseObject = {
     'purple': new Audio(purple),
 };
 
+// "on" is a bit loud :)
 sounds.on.volume = 0.5;
 
+/** Play all sounds muted so the browser is allowed to play them when needed. */
 export const preload = () => {
     for (const sound in sounds) {
-        sounds[sound].muted = 'muted';
+        sounds[sound].muted = true;
         sounds[sound].play();
         sounds[sound].onended = () => {
-            sounds[sound].muted = null;
+            sounds[sound].muted = false;
             sounds[sound].onended = null;
         }
     }

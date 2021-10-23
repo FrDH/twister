@@ -41,21 +41,21 @@ export const reset = () => {
         //  Preload all sounds.
         audio.preload();
 
-        // Countdown from 5 to 0.
+        // Countdown from 3 to 0.
         if (controlText) {
-            let loop = 5;
-            controlText.innerHTML = `${loop}`;
+            let countdown = 3;
+            controlText.innerHTML = `${countdown}`;
 
             let startInterval = setInterval(() => {
-                loop--;
+                countdown--;
                 
-                if (loop == 0) {
+                if (countdown == 0) {
                     controlText.innerHTML = '';
                     clearInterval(startInterval);
                     game.play();
                 
                 } else {
-                    controlText.innerHTML = `${loop}`;
+                    controlText.innerHTML = `${countdown}`;
                 }
 
             }, 1000);
