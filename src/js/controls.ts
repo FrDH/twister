@@ -43,9 +43,12 @@ export const reset = () => {
 
         // Countdown from 3 to 0.
         if (controlText) {
+            /** The count */
             let countdown = 3;
+
             controlText.innerHTML = `${countdown}`;
 
+            /** Interval for counting down. */
             let startInterval = setInterval(() => {
                 countdown--;
                 
@@ -57,7 +60,6 @@ export const reset = () => {
                 } else {
                     controlText.innerHTML = `${countdown}`;
                 }
-
             }, 1000);
 
         // No countdown, play the game immediately.
