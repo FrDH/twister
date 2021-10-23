@@ -1,31 +1,70 @@
-import config from './config';
+import * as game from './game';
+import * as audio from './audio';
 
-export default (fn: Function) => {
+/** The play / pause button.  */
+const controlElem = document.querySelector('.control');
 
-    /** Interval for the next step. */
-    let interval: any = null;
+/** Text inside the button. */
+const controlText = controlElem?.querySelector('.control__text');
 
-    /** Play / pause button. */
-    const control = document.querySelector('.control');
+/** The game. */
+const gameElem = document.querySelector('.game');
 
-    // Toggle play / pause.
-    control?.addEventListener('click', () => {
+/** Initialise the controls */
+export const init = () => {
 
-        // Play
-        if (control.classList.contains('control--play')) {
-            fn();
-            interval = setInterval(fn, config.duration);
+    // Toggle play / pause when clicking the button.
+    controlElem?.addEventListener('click', () => {
 
-        //  Pause
-        } else if (control.classList.contains('control--pause')) {
-            clearInterval(interval);
-            document.querySelectorAll('.limb').forEach(limb => {
-                limb.classList.remove(...config.colors);
-            });
+        // Pause the game
+        if (gameElem?.classList.contains('is-playing')) {
+            game.pause();
+            
+        // Play the game
+        } else if (gameElem?.classList.contains('is-paused')) {
+            game.play();
         }
-
-        control.classList.toggle('control--play')
-        control.classList.toggle('control--pause');
     });
+}
 
+/** Reset the controls to "Start" */
+export const reset = () => {
+
+    //  Set button to "start"
+    if (controlText) {
+        controlText.innerHTML = 'Start';
+    }
+    
+    // Start the countdown when clicking the button (once).
+    controlElem?.addEventListener('click', () => {
+
+        //  Preload all sounds.
+        audio.preload();
+
+        // Countdown from 5 to 0.
+        if (controlText) {
+            let loop = 5;
+            controlText.innerHTML = `${loop}`;
+
+            let startInterval = setInterval(() => {
+                loop--;
+                
+                if (loop == 0) {
+                    controlText.innerHTML = '';
+                    clearInterval(startInterval);
+                    game.play();
+                
+                } else {
+                    controlText.innerHTML = `${loop}`;
+                }
+
+            }, 1000);
+
+        // No countdown, play the game immediately.
+        } else {
+            game.play();
+        }
+    }, {
+        once: true
+    });
 }

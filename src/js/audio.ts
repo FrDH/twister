@@ -11,7 +11,7 @@ import red from '../audio/red.m4a?url';
 import purple from '../audio/purple.m4a?url';
 
 /** Object with audio instances. */
-const audio: looseObject = {
+export const sounds: looseObject = {
     'leftfoot': new Audio(leftfoot),
     'lefthand': new Audio(lefthand),
     'rightfoot': new Audio(rightfoot),
@@ -25,6 +25,15 @@ const audio: looseObject = {
     'purple': new Audio(purple),
 };
 
-audio.on.volume = 0.5;
+sounds.on.volume = 0.5;
 
-export default audio;
+export const preload = () => {
+    for (const sound in sounds) {
+        sounds[sound].muted = 'muted';
+        sounds[sound].play();
+        sounds[sound].onended = () => {
+            sounds[sound].muted = null;
+            sounds[sound].onended = null;
+        }
+    }
+};

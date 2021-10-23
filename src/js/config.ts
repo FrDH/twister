@@ -1,14 +1,11 @@
-export default  {
-    
-    /** Time between steps. */
-    duration: 6000,
+/** Time between steps. */
+export const duration = 6000;
 
-    /** The available sides. */
-    sides: ['left', 'right'],
+/** The available sides. */
+export const sides = ['left', 'right'];
 
-    /** The available limbs. */
-    limbs: ['hand', 'foot'],
+/** The available limbs. */
+export const limbs = ['hand', 'foot'];
 
-    /** The available colors. */
-    colors: ['red', 'blue', 'green', 'purple']
-}
+/** The available colors. */
+export const colors = ['red', 'blue', 'green', 'purple'];

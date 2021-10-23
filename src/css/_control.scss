@@ -1,5 +1,5 @@
 :root {
-  --step-duration: 6s;
+  --step-duration: 12s;
 }
 
 .control {
@@ -25,13 +25,13 @@
     display: block;
   }
 
-  &--play:before {
+  .is-paused &:before {
     margin-left: 15px;
     border: 12px solid transparent;
     border-left: 20px solid currentColor;
   }
 
-  &--pause:before {
+  .is-playing &:before {
     width: 8px;
     height: 25px;
     border-left: 6px solid;
@@ -39,18 +39,14 @@
   }
 }
 
-.control__start {
-  display: none;
-
-  .control--start & {
-    display: block;
-  }
+.control__text {
+  text-transform: uppercase;
 }
 
 .control__loading {
   display: none;
 
-  .control--pause & {
+  .is-playing & {
     display: block;
   }
 
